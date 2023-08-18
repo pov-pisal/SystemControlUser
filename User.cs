@@ -125,7 +125,7 @@ namespace Pov_Pisal
                     User user1 = new User();
                     Console.Write("Enter Name: ");
                     user.Name = Console.ReadLine();
-                    if (user.Name != "")
+                    if (user1.Name != "")
                     {
                         user.Name = user1.Name;
                     }

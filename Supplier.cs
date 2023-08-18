@@ -151,7 +151,7 @@ namespace Pov_Pisal
             }
             if (!found)
             {
-                Console.WriteLine("Student not found!");
+                Console.WriteLine("Supplier not found!");
             }
         }
     }

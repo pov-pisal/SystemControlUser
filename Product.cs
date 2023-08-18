@@ -65,13 +65,13 @@ namespace Pov_Pisal
                 product = new Product();
                 Console.Write("Enter Id: ");
                 product.Id = int.Parse(Console.ReadLine());
-                Console.Write("Enter LastName: ");
+                Console.Write("Enter Name: ");
                 product.Name = Console.ReadLine();
-                Console.Write("Enter FirstName: ");
+                Console.Write("Enter Barcode: ");
                 product.Barcode = Console.ReadLine();
-                Console.Write("Enter Gender: ");
+                Console.Write("Enter UnitPrice: ");
                 product.UnitPrice = Console.ReadLine();
-                Console.Write("Enter Address: ");
+                Console.Write("Enter QtyInstock: ");
                 product.QtyInstock = Console.ReadLine();
                 arrayListProduct.Add(product);
                 Console.Clear();
@@ -80,7 +80,7 @@ namespace Pov_Pisal
         public void Show()
         {
             Console.Clear();
-            var table = new ConsoleTable("Id", "Last Name", "First Name", "Gender", "Address");
+            var table = new ConsoleTable("Id", "Name", "Barcode", "UnitPrice", "QtyInstock");
             for (int i = 0; i < arrayListProduct.Count; i++)
             {
                 Product product1 = new Product();
@@ -119,25 +119,25 @@ namespace Pov_Pisal
                 if (product.Id == this.Id)
                 {
                     Product product1 = new Product();
-                    Console.Write("Enter LastName: ");
+                    Console.Write("Enter Name: ");
                     product1.Name = Console.ReadLine();
                     if (product1.Name != "")
                     {
                         product.Name = product1.Name;
                     }
-                    Console.Write("Enter FirstName: ");
+                    Console.Write("Enter Barcode: ");
                     product1.Barcode = Console.ReadLine();
                     if (product1.Barcode != "")
                     {
                         product.Barcode = product1.Barcode;
                     }
-                    Console.Write("Enter Gender: ");
+                    Console.Write("Enter UnitPrice: ");
                     product1.UnitPrice = Console.ReadLine();
                     if (product1.UnitPrice != "")
                     {
                         product.UnitPrice = product1.UnitPrice;
                     }
-                    Console.Write("Enter Address: ");
+                    Console.Write("Enter QtyInstock: ");
                     product1.QtyInstock = Console.ReadLine();
                     if (product1.QtyInstock != "")
                     {
@@ -156,7 +156,7 @@ namespace Pov_Pisal
                 if (product.Id == searchId)
                 {
                     Console.Clear();
-                    var table = new ConsoleTable("Id", "Last Name", "First Name", "Gender", "Address");
+                    var table = new ConsoleTable("Id", "Name", "Barcode", "UnitPrice", "QtyInstock");
                     table.AddRow(product.Id, product.Name, product.Barcode, product.UnitPrice, product.QtyInstock);
                     table.Write();
                     found = true;
@@ -165,7 +165,7 @@ namespace Pov_Pisal
             }
             if (!found)
             {
-                Console.WriteLine("Student not found!");
+                Console.WriteLine("Products not found!");
             }
         }
     }
