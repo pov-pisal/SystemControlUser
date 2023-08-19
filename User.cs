@@ -124,7 +124,7 @@ namespace Pov_Pisal
                 {
                     User user1 = new User();
                     Console.Write("Enter Name: ");
-                    user.Name = Console.ReadLine();
+                    user1.Name = Console.ReadLine();
                     if (user1.Name != "")
                     {
                         user.Name = user1.Name;
@@ -166,8 +166,13 @@ namespace Pov_Pisal
                 if (user.Id == searchId)
                 {
                     Console.Clear();
-                    var table = new ConsoleTable("Id", "Last Name", "First Name", "Gender", "Address");
-                    table.AddRow(user.Id, user.Name, user.Gender, user.Password, user.Tell, user.Address);
+                    var table = new ConsoleTable("Id", "Name", "Gender", "Password", "Tell", "Address");
+                    for (int i = 0; i < arrayListUser.Count; i++)
+                    {
+                        User user1 = new User();
+                        user1 = (User)arrayListUser[i];
+                        table.AddRow(user1.Id, user1.Name, user1.Gender, user1.Password, user1.Tell, user1.Address);
+                    }
                     table.Write();
                     found = true;
                     break;
