@@ -167,12 +167,7 @@ namespace Pov_Pisal
                 {
                     Console.Clear();
                     var table = new ConsoleTable("Id", "Name", "Gender", "Password", "Tell", "Address");
-                    for (int i = 0; i < arrayListUser.Count; i++)
-                    {
-                        User user1 = new User();
-                        user1 = (User)arrayListUser[i];
-                        table.AddRow(user1.Id, user1.Name, user1.Gender, user1.Password, user1.Tell, user1.Address);
-                    }
+                    table.AddRow(user.Id, user.Name, user.Gender, user.Password, user.Tell, user.Address);
                     table.Write();
                     found = true;
                     break;
@@ -180,7 +175,7 @@ namespace Pov_Pisal
             }
             if (!found)
             {
-                Console.WriteLine("Student not found!");
+                Console.WriteLine("Supplier not found!");
             }
         }
     }
